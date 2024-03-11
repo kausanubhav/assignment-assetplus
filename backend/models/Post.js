@@ -1,13 +1,26 @@
-var mongoose = require("mongoose");
+import mongoose from 'mongoose'
 
 var postSchema = mongoose.Schema(
     {
         // @AssetPlus: Describe schema here
+        title:{
+            required:true,
+            type:String
+        },
+        // image:{
+        //     required:true,
+        //     type:Buffer,
 
+        // },
+        description:{
+            type:String,
+            required:true
+        }
     },
     {
         timestamps: true
     }
 );
 
-module.exports = mongoose.model("Post", postSchema)
+const Post = mongoose.model("Post", postSchema)
+export default Post
